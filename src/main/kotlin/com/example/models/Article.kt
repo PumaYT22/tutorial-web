@@ -15,7 +15,3 @@ private constructor(val id: Int, var title: String, var body: String) {
 
 }
 
-val articles = mutableListOf(Article.newEntry(
-    "The drive to develop!",
-    "...it's what keeps me going."
-))

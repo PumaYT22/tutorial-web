@@ -21,6 +21,8 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-css:1.0.0-pre.324-kotlin-1.6.10")
+    implementation("io.ktor:ktor-server-html-builder:$ktor_version")
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-freemarker-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-host-common-jvm:$ktor_version")

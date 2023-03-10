@@ -1,0 +1,16 @@
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.kontener{
+    margin:0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-flow:column wrap;
+}
+
