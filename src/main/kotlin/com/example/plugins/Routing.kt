@@ -142,6 +142,7 @@ fun Application.configureRouting() {
             get("{id}/edit") {
                 val id = call.parameters.getOrFail<Int>("id").toInt()
                 val wartosc= (articles.find { it.id == id })
+                val b=0;
 
                 call.respondHtml {
                     body {
