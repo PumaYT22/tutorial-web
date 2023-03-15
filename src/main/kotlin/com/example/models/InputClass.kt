@@ -15,3 +15,4 @@ private constructor(val id: Int, var title: String, var body: String,var liczba:
 
 }
 
+

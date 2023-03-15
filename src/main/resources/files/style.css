@@ -61,7 +61,7 @@ h1 {
 
 form {
     margin: 2rem auto;
-    width: 80%;
+    width: 50%;
 }
 
 label {
@@ -103,12 +103,14 @@ input[type="submit"]:hover {
 table {
     border-collapse: collapse;
     border: 2px solid #ccc;
-    width: 100%;
+    width: 80%;
+    margin:0 auto;
+    margin-top:150px;
     background-color: #f1f1f1;
 }
 
 th {
-    background-color: #4CAF50;
+    background-color: #222222;
     color: white;
     font-weight: bold;
 }
@@ -118,10 +120,4 @@ td {
     border-bottom: 1px solid #ddd;
 }
 
-tr:hover {
-    background-color: #ddd;
-}
 
-td:hover {
-    background-color: #f2f2f2;
-}
