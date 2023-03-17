@@ -18,59 +18,101 @@ class InputyTemplate: Template<HTML> {
                 h1 { +"Formularz" }
                 form(
                     action = "/inputy",
-                    encType = FormEncType.applicationXWwwFormUrlEncoded,
+                    encType = FormEncType.multipartFormData,
                     method = FormMethod.post
                 ) {
+                    label { +"Imię:" }
+                    input(InputType.text) {
+                        name = "firstName"
+                        required = true
+                    }
+
+                    label { +"Nazwisko:" }
+                    input(InputType.text) {
+                        name = "lastName"
+                        required = true
+                    }
+
+                    label { +"E-mail:" }
+                    input(InputType.email) {
+                        name = "email"
+                        required = true
+                    }
+
+                    label { +"Hasło:" }
+                    input(InputType.password) {
+                        name = "password"
+                        required = true
+                    }
+
+                    label { +"Zdjęcie profilowe:" }
+                    input(InputType.file) {
+                        name = "profileImage"
+                    }
+
+                    label { +"Adres:" }
+                    input(InputType.text) {
+                        name = "street"
+                        placeholder = "Ulica"
+                    }
+                    input(InputType.text) {
+                        name = "city"
+                        placeholder = "Miasto"
+                    }
+                    input(InputType.text) {
+                        name = "postalCode"
+                        placeholder = "Kod pocztowy"
+                    }
+
+                    label { +"Data urodzenia:" }
+                    dateInput {
+                        name="dateOfBirth"
+                    }
+
+                    label { +"Płeć:" }
+
+                    label { +"Mężczyzna" }
+                    input(InputType.radio) {
+                        name = "gender"
+                        value = "MALE"
+                        required = true
+                    }
+
+                    label { +"Kobieta" }
+                    input(InputType.radio) {
+                        name = "gender"
+                        value = "FEMALE"
+                        required = true
+                    }
+
+
                     label {
-                        htmlFor = "title"
-                        +"Pole tekstowe:"
+                        checkBoxInput() {
+                            name = "acceptTermsAndConditions"
+                            required = true
+                        }
+                        +"Akceptuję regulamin"
                     }
-                    input {
-                        type = InputType.text
-                        id = "title"
-                        name = "title"
-                    }
-                    br
-                    label {
-                        htmlFor = "body"
-                        +"Hasło:"
-                    }
-                    input {
-                        type = InputType.password
-                        id = "body"
-                        name = "body"
-                    }
-                    br
-                    label {
-                        htmlFor = "liczba"
-                        +"Liczba:"
-                    }
-                    input {
-                        type = InputType.number
-                        id = "liczba"
-                        name = "liczba"
-                        min = "0"
-                        max = "100"
-                    }
-                    br
-                    label {
-                        htmlFor = "checkpud"
-                        +"Checkbox:"
-                    }
-                    input {
-                        type = InputType.checkBox
-                        id = "checkpud"
-                        name = "checkpud"
-                    }
-                    br
-                    label {
-                        htmlFor = "radpud"
-                        +"Radio:"
-                    }
-                    input {
-                        type = InputType.radio
-                        id = "radpud"
-                        name = "radpud"
+
+                    label { +"Skąd wiesz o naszej stronie?" }
+                    select {
+                        name = "referralSource"
+                        option {
+                            value = "wyszukiwarka"
+                            +"Wyszukiwarka internetowa"
+                        }
+                        option {
+                            value = "socialMedia"
+                            +"Media społecznościowe"
+                        }
+                        option {
+                            value = "znajomy"
+                            +"Przyjaciel"
+                        }
+                        option {
+                            value = "inne"
+                            +"Inne"
+                        }
                     }
                     submitInput { value = "Utwórz" }
                 }

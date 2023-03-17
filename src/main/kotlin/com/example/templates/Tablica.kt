@@ -1,12 +1,17 @@
 package com.example.templates
 
-import com.example.plugins.daneinput
+
+import com.example.models.UserDatas
 import io.ktor.server.html.*
 import kotlinx.html.*
+import java.io.File
 
 class TablicaTemplate: Template<HTML> {
 
     var navbar=TemplatePlaceholder<NavbarTemplate>()
+    val uploadsDir = File("uploads")
+
+
     override fun HTML.apply() {
 
         head {
@@ -18,19 +23,38 @@ class TablicaTemplate: Template<HTML> {
             div("kontener") {
                 table{
                     tr{
-                        th{+"Tekst"}
-                        th{+"Haslo"}
-                        th{+"Numeryczny"}
-                        th{+"Check"}
-                        th{+"Radio"}
+                        th{+"Id"}
+                        th{+"Imie"}
+                        th{+"Nazwisko"}
+                        th{+"E-mail"}
+                        th{+"Hasło"}
+                        th{+"Zdj Profiler"}
+                        th{+"Ulica"}
+                        th{+"Miasto"}
+                        th{+"Kod pocztowy"}
+                        th{+"Data urodzenia"}
+                        th{+"Płeć"}
+                        th{+"Regulamin"}
+                        th{+"Skąd wie"}
                     }
-                    for (inputss in daneinput) {
+                    for (inputss in arrayListOf<UserDatas>()) {
                         tr{
-                            td{+inputss.title}
-                            td{+inputss.body}
-                            td{+"${inputss.liczba}"}
-                            td{+"${inputss.checkpud}"}
-                            td{+"${inputss.radpud}"}
+                            td{inputss.id}
+                            td{inputss.firstName}
+                            td{inputss.lastName}
+                            td{inputss.email}
+                            td{inputss.password}
+                            td{ img {
+                                src = "${uploadsDir}/${inputss.profileImage}"
+                            }
+                            }
+                            td{inputss.street}
+                            td{inputss.city }
+                            td{inputss.postalCode }
+                            td{inputss.dateOfBirth }
+                            td{+"${inputss.gender}"}
+                            td{+"${inputss.acceptTermsAndConditions}"}
+                            td{+"${inputss.referralSource}"}
                         }
                     }
                 }
